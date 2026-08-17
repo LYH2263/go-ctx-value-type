@@ -7,8 +7,7 @@ type keyType string
 const userKey keyType = "user"
 
 func Set(ctx context.Context, v string) context.Context {
-	// BUG: string key
-	return context.WithValue(ctx, "user", v)
+	return context.WithValue(ctx, userKey, v)
 }
 
 func Get(ctx context.Context) (string, bool) {
